@@ -1,12 +1,12 @@
-class skew {
-  constructor(e) {
+class Skew {
+  constructor (e) {
     this.wrap = document.querySelector(e);
     this.wrapMarginTop = this.wrap.offsetTop;
     this.el = this.wrap.querySelectorAll('.skewItem');
     this.content = [];
     this.length = this.el.length;
   }
-  chk(idx) {
+  chk (idx) {
     for (let i = idx; i < this.length; i++) {
       if (this.content[i] === undefined) {
         this.content[i] = {};
@@ -25,7 +25,7 @@ class skew {
     }
     return this.content;
   }
-  paint(idx) {
+  paint (idx) {
     this.chk(idx);
     const current = this.content[idx];
     const currentTop = current.elTop;
@@ -43,7 +43,7 @@ class skew {
       }
     }
   }
-  init() {
+  do () {
     this.chk(0);
     const _this = this;
     for (let i = 0; i < this.length; i++) {
@@ -73,5 +73,5 @@ var skew = function(e) {
   this.init();
 } */
 
-const a = new skew('main');
-a.init();
+const skew = new Skew('main');
+skew.do();
